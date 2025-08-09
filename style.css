@@ -1,0 +1,103 @@
+body {
+  background: #232539;
+  color: #fff;
+  font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
+  text-align: center;
+}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+#game-area {
+  position: relative;
+  width: 240px;
+  height: 480px;
+}
+#tetris, #ghost {
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 1;
+}
+#ghost {
+  z-index: 2;
+  pointer-events: none;
+}
+#overlay {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(44,48,75,0.7);
+  color: #fff;
+  font-size: 2.2em;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+#side {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+canvas#next, canvas#hold {
+  background: #191b2c;
+  border: 2px solid #2d3051;
+  margin-top: 5px;
+}
+button {
+  background: #1ebfae;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.1em;
+  padding: 8px 18px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+button:hover {
+  background: #117fa0;
+}
+#mobile-controls {
+  position: absolute;
+  bottom: 10px; left: 0;
+  width: 100%;
+  display: none;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+#mobile-controls button {
+  font-size: 1.7em;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 3px;
+}
+@media (max-width: 780px) {
+  #main {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  #side {
+    flex-direction: row;
+    gap: 35px;
+    align-items: flex-start;
+  }
+  #mobile-controls {
+    display: flex !important;
+  }
+}
+@media (max-width: 500px) {
+  #main {
+    flex-direction: column;
+  }
+  #side {
+    flex-direction: column;
+    align-items: center;
+  }
+}
